@@ -1,0 +1,42 @@
+.bdy {
+    margin: 2rem auto;
+    align-content: center;
+}
+
+.logo {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+.logo h2,
+#icon {
+    display: inline-block;
+}
+
+.login {
+    border: 1px solid #103166;
+    width: 30vw;
+    margin-left: 35%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px;
+}
+
+.btn {
+    background-color: '#367864';
+}
+
+.google-login {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.gogle-logo {
+    margin-right: 1rem;
+}

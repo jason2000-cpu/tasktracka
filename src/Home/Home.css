@@ -1,0 +1,37 @@
+.bdy {
+    margin: auto 1rem
+}
+
+.logo {
+    /* border: 2px solid black; */
+    display: flex;
+    /* margin-left: 1rem;
+    margin-top: 1rem; */
+}
+
+.logo h2,
+#icon {
+    display: inline-block;
+}
+
+.main {
+    /* display: flex;
+    justify-content: space-around; */
+    border: 2px solid black;
+    height: 85vh;
+}
+
+.list {
+    /* border: 2px solid black; */
+}
+
+.todoFact {
+    border: 2px solid black;
+}
+
+.header {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
