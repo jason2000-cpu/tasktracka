@@ -5,8 +5,6 @@ import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 
 import './Home.css'
 
-import logo from '../image/logo.svg'
-
 
 function Home() {
     let todo = [
@@ -39,18 +37,25 @@ function Home() {
             "timestamp": "2022-10-27 16:46:9",
             "body": "Learn Angular",
             "status": "Not complete"
+          },
+          {
+            "id": "f3eztv-kmrt-4vql-9ukka1",
+            "timestamp": "2022-10-27 16:46:9",
+            "body": "Learn Angular",
+            "status": "Not complete"
+          },
+          {
+            "id": "f3eztv-kmrt-4vql-9ukka1",
+            "timestamp": "2022-10-27 16:46:9",
+            "body": "Learn Angular",
+            "status": "Not complete"
           }
     ];
   return (
     <div className='bdy'>
-        <div className='logo'>
-            <h2>Task</h2>
-            <img src={logo} id='icon' alt='logo'/>
-            <h2>Tracka</h2>
-        </div>
         <div className='main row'>
             <div className='list col col-sm-6'>
-                <h2>list: Todo</h2>
+                <h2>Tasks</h2>
                 <div className='listBody'>
                     {todo.map((item, index) => (
                         <div className='todo' key={index}>

@@ -2,23 +2,11 @@
     margin: auto 1rem
 }
 
-.logo {
-    /* border: 2px solid black; */
-    display: flex;
-    /* margin-left: 1rem;
-    margin-top: 1rem; */
-}
-
-.logo h2,
-#icon {
-    display: inline-block;
-}
-
 .main {
     /* display: flex;
     justify-content: space-around; */
     /* border: 2px solid black; */
-    height: 92vh;
+    height: 90vh;
 }
 
 .list {
@@ -36,7 +24,10 @@
     margin-top: 1rem;
 }
 
-
+.listBody {
+  height: 83vh;
+  overflow: scroll;
+}
 
 
 

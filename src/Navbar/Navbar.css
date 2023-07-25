@@ -1,0 +1,31 @@
+.bodi {
+    border-bottom: 1px solid  rgba(0, 0, 0, .4);
+    box-shadow: 2px 2px 2px  rgba(54,120,100, .6);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    /* border: 2px solid black; */
+    display: flex;
+    /* margin-left: 1rem;
+    margin-top: 1rem; */
+}
+
+.logo h2,
+#icon {
+    display: inline-block;
+}
+.nav {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 7rem;
+    padding-top: .5rem;
+}
