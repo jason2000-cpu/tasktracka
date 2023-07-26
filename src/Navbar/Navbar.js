@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css'
 
 import logo from '../image/logo.svg'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -13,9 +14,9 @@ function Navbar() {
         </div>
         <div className='nav'>
             <ul>
-                <li>Home</li>
-                <li>Profile</li>
-                <li>Logout</li>
+                <Link to={'/home'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Home</li></Link>
+                <Link to={'/'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Profile</li></Link>
+                <Link to={'/login'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Logout</li></Link>
             </ul>
         </div>
     </div>

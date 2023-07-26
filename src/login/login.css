@@ -76,4 +76,9 @@
     line-height: normal;
     letter-spacing: -0.72px;
 }
+.forgotpwdRem {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
 

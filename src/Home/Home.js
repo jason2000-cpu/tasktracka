@@ -51,6 +51,40 @@ function Home() {
             "status": "Not complete"
           }
     ];
+
+    const createTimeStamp = () => {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day  = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        let timeStamp = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+        return timeStamp;
+    }
+  const createRandomId = () => {
+    let id = Math.random().toString(36).substr(2, 4);
+    return id;
+  };
+  const createTodo = () => {
+    let todoId = document.getElementById("todoId").value;
+    let todoBody = document.getElementById("todoBody").value;
+    let todoTimestamp = document.getElementById("todoTimestamp").value;
+    let todoStatus = "Not complete";
+    let todo = {
+      id: todoId,
+      timestamp: todoTimestamp,
+      body: todoBody,
+      status: todoStatus,
+    };
+    return todo;
+  };
+
+ const fillIdAndTimestamp = () => {
+      document.getElementById("todoId").value = createRandomId();
+      document.getElementById("todoTimestamp").value = createTimeStamp();
+ };
   return (
     <div className='body'>
         <div className='main row'>
@@ -74,20 +108,19 @@ function Home() {
                     ))}
                 </div>
             </div>
-            {/* <hr /> */}
             <div className='todoFact col col-sm-6'>
                 <div className='header'>
                     <div className='col headTxt'>
                       <h3>Todo : <span>Factory</span></h3>
                     </div>
                     <div className='headBtn'>
-                        <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Create new Todo</button>
+                        <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn" onClick={fillIdAndTimestamp}>Create new Todo</button>
                     </div>
                 </div>
                 <div className='form'>
                     <div class="mb-3">
                         <label for="todoId" class="form-label">Todo Id</label>
-                        <input type="email" class="form-control" id="todoId" placeholder="" />
+                        <input type="text" class="form-control" id="todoId" placeholder="" />
                     </div>
                     <div class="mb-3">
                         <label for="todoBody" class="form-label">Todo Body :</label>
