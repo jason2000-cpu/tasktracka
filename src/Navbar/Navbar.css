@@ -7,10 +7,7 @@
 }
 
 .logo {
-    /* border: 2px solid black; */
     display: flex;
-    /* margin-left: 1rem;
-    margin-top: 1rem; */
 }
 
 .logo h2,
@@ -18,10 +15,8 @@
     display: inline-block;
 }
 .nav {
-    /* border: 2px solid black; */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 }
 ul li {
     list-style: none;

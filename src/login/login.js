@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from '../image/logo.svg'
+import googleIcon from '../image/googleIcon.svg'
+import Vector from '../image/Vector.png'
 
 import './login.css'
 
@@ -7,15 +8,15 @@ function Login() {
   return (
     <div className='bdy'>
         <div className='logo'>
-            <h2>Task</h2>
-            <img src={logo} id='icon' alt='logo'/>
-            <h2>Tracka</h2>
+            <h1>Task</h1>
+            <img src={Vector} id='icon' style={{width: '60px', height: '60px'}} alt='logo'/>
+            <h1>Tracka</h1>
         </div>
         <div className='login'>
             <h2>Login</h2>
             <div className='google-login'>
                 <div className='gogle-logo'>
-                    <h1>G</h1>
+                    <img src={googleIcon} alt='google-icon' />
                 </div>
                 <div className='ggle-text'>
                     <h5>Continue with Google</h5>
@@ -36,6 +37,7 @@ function Login() {
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> */}
                 <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Submit</button>
+                <p>Don't have an Account? <span>Sign In</span></p>
             </div>
         </div>
     </div>

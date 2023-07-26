@@ -1,24 +1,23 @@
-.bdy {
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+.body {
     margin: auto 1rem
 }
 
 .main {
-    /* display: flex;
-    justify-content: space-around; */
-    /* border: 2px solid black; */
     height: 90vh;
 }
 
 .list {
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(2, 2, 2, 0.384);
 }
 
 .todoFact {
-    /* border-left: 2px solid black; */
+    padding: 0 2rem;
 }
 
 .header {
-    /* border: 2px solid black; */
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
@@ -26,63 +25,10 @@
 
 .listBody {
   height: 83vh;
-  overflow: scroll;
-}
-
-
-
-/* css from  the other project */
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.parent-div {
-  display: flex;
-}
-
-.child-1 {
-  width: 55%;
-  height: 100vh;
-  padding: 15px;
-}
-
-.child-2 {
-  width: 20px;
-  height: 90vh;
-  border-right: 1px solid lightgrey;
-  margin: 30px 0;
-}
-
-.child-3 {
-  width: 20px;
-  height: 90vh;
-  border-left: 1px solid lightgrey;
-  margin: 30px 0;
-}
-
-.child-4 {
-  width: 45%;
-  height: 100vh;
-  padding: 15px;
-}
-
-.main-content {
-  /* background-color: red; */
-  padding: 10px;
-  height: 100%;
+  overflow-y: scroll;
 }
 
 .todo-content {
-  /* background-color: yellow; */
   height: calc(100% - 40px);
   padding: 15px;
   overflow-y: auto;
@@ -169,18 +115,4 @@
   background-color: white;
   border-radius: 0px 5px 5px 0px;
   transition: all .3s ease;
-}
-
-.full-title {
-  font-size: 30px;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 200;
-  margin-left: 7%;
-  background-color: white;
-}
-
-.todo-title {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-  color: #012443;
 }

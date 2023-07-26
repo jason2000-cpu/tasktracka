@@ -1,0 +1,10 @@
+.logo h1 {
+    color: #000;
+    font-family: 'Lilita One';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: -1.92px;
+    text-shadow: 5px 5px 10px rgba(54, 120, 100, 1);
+}

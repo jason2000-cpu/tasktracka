@@ -52,7 +52,7 @@ function Home() {
           }
     ];
   return (
-    <div className='bdy'>
+    <div className='body'>
         <div className='main row'>
             <div className='list col col-sm-6'>
                 <h2>Tasks</h2>

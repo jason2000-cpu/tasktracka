@@ -1,16 +1,16 @@
 import './App.css';
-// import Login from './login/login.js'
-// import Register from './Register/Register';
+import Login from './login/login.js'
+import Register from './Register/Register';
 import Home from './Home/Home';
 import Navbar from './Navbar/Navbar';
 
 function App() {
   return (
     <div>
-       {/* <Login /> */}
+       <Login />
         {/* <Register /> */}
-        <Navbar />
-        <Home />
+         {/* <Navbar /> */}
+        {/* <Home />  */}
     </div>
   );
 }

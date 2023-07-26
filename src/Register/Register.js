@@ -2,21 +2,24 @@ import React from 'react'
 
 
 import '../login/login.css'
-import logo from '../image/logo.svg'
+// import './Register.css'
+// import logo from '../image/logo.svg'
+import Vector from '../image/Vector.png'
+import googleIcon from '../image/googleIcon.svg'
 
 function Register() {
   return (
 <div className='bdy'>
         <div className='logo'>
-            <h2>Task</h2>
-            <img src={logo} id='icon' alt='logo'/>
-            <h2>Tracka</h2>
+            <h1>Task</h1>
+            <img src={Vector} id='icon' style={{width: '50px', height: '50px'}} alt='logo'/>
+            <h1>Tracka</h1>
         </div>
         <div className='login'>
             <h2>Sign In</h2>
             <div className='google-login'>
                 <div className='gogle-logo'>
-                    <h1>G</h1>
+                    <img src={googleIcon} alt='google-icon' />
                 </div>
                 <div className='ggle-text'>
                     <h5>Continue with Google</h5>
@@ -42,6 +45,7 @@ function Register() {
                 </div> */}
                 <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Submit</button>
             </div>
+            <p>Already have an Account? <span>Login</span></p>
         </div>
     </div>
   )
