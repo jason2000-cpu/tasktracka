@@ -3,6 +3,7 @@ import googleIcon from '../image/googleIcon.svg'
 import Vector from '../image/Vector.png'
 
 import './login.css'
+import { Link } from 'react-router-dom'
 
 function Login() {
   return (
@@ -37,7 +38,7 @@ function Login() {
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> */}
                 <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Submit</button>
-                <p>Don't have an Account? <span>Sign In</span></p>
+                <p>Don't have an Account?  <Link to={'/'} style={{textDecoration:'none'}}><span onClick={()=>{}}>Sign In</span></Link> </p>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 import '../login/login.css'
 // import './Register.css'
@@ -45,7 +45,7 @@ function Register() {
                 </div> */}
                 <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Submit</button>
             </div>
-            <p>Already have an Account? <span>Login</span></p>
+            <p>Already have an Account? <Link to={'/login'} style={{textDecoration:'none'}}><span>Login</span></Link> </p>
         </div>
     </div>
   )
