@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // icons
 import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
@@ -7,50 +7,29 @@ import './Home.css'
 
 
 function Home() {
-    let todo = [
-        {
-            "id": "fjyaey-yznq-mg0z-gfagpz",
-            "timestamp": "2022-6-27 23:36:42",
-            "body": "Kenya One",
-            "status": "Not complete"
-          },
-          {
-            "id": "570hx1-y4hv-zas9-713geg",
-            "timestamp": "2022-6-30 22:29:1",
-            "body": "visit friend",
-            "status": "Not complete"
-          },
-          {
-            "id": "r64fyb-oyty-ty00-cr7zb2",
-            "timestamp": "2022-7-1 9:34:40",
-            "body": "Milk the cows",
-            "status": "Not complete"
-          },
-          {
-            "id": "uwh97o-v57f-z98t-57pcz3",
-            "timestamp": "2022-7-1 10:1:48",
-            "body": "Do the axios assignment",
-            "status": "Not complete"
-          },
-          {
-            "id": "f3eztv-kmrt-4vql-9ukka1",
-            "timestamp": "2022-10-27 16:46:9",
-            "body": "Learn Angular",
-            "status": "Not complete"
-          },
-          {
-            "id": "f3eztv-kmrt-4vql-9ukka1",
-            "timestamp": "2022-10-27 16:46:9",
-            "body": "Learn Angular",
-            "status": "Not complete"
-          },
-          {
-            "id": "f3eztv-kmrt-4vql-9ukka1",
-            "timestamp": "2022-10-27 16:46:9",
-            "body": "Learn Angular",
-            "status": "Not complete"
-          }
-    ];
+
+
+    // let [todos, setTodo] = useState();
+    let [item, setItem] = useState([]);
+    // let [formData, setFormData] = useState([])
+    const url = 'http://localhost:5000'
+
+ useEffect( () => {
+  async function fetchData() {
+    const response = await fetch(`${url}/getTodos`)
+    try {
+      const response =  await fetch(`${url}/getTodos`);
+      const json = await response.json();
+      console.log(json);
+      setItem(json);
+    } catch (err) {
+      alert("An Error occured while fetching todos ::::", response)
+    }
+  }
+  fetchData()
+ }, [url])
+
+
 
     const createTimeStamp = () => {
         let date = new Date();
@@ -78,6 +57,9 @@ function Home() {
       body: todoBody,
       status: todoStatus,
     };
+    // setFormData(todo)
+    
+    alert(`Success!! ${todo.body} is created at ${todo.timestamp}`)
     return todo;
   };
 
@@ -91,10 +73,10 @@ function Home() {
             <div className='list col col-sm-6'>
                 <h2>Tasks</h2>
                 <div className='listBody'>
-                    {todo.map((item, index) => (
+                    {item.map((item, index) => (
                         <div className='todo' key={index}>
                             <div data-id={item.id} className='todo-content-item'>
-                                <span className='todo-id'>▪️ {item.id} ▪️</span>
+                                <span className='todo-id'>▪️{item._id}▪️</span>
                                 {item.status === "Complete" ? <span style={{textDecoration: 'line-through'}} className='todo-text'>{item.body}</span> : <span className='todo-text'>{item.body}</span>}
                                 <span className='todo-date'>Created at : {item.timestamp}</span>
                                 <span className='todo-status incomplete'>▪️ {item.status} ▪️</span>
@@ -130,7 +112,7 @@ function Home() {
                         <label for="todoTimestamp" class="form-label">Todo Timestamp</label>
                         <input type="email" class="form-control" id="todoTimestamp" placeholder=" " />
                     </div>
-                    <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Create Todo</button>
+                    <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn" onClick={createTodo}>Create Todo</button>
 
                 </div>
             </div>
