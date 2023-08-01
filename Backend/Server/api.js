@@ -17,7 +17,7 @@ const getUser = async (formData) => {
         const collection = db.collection(collectionName);
         const user = await collection.findOne({name: formData.name, password: formData.password})
         if (user) {
-            console.log(user);
+            // console.log(user);
             return user;
         }else {
             console.log("User not found");
@@ -46,7 +46,7 @@ const addUser = async (FormData) => {
 
         const result = await collection.insertOne(document);
         if (result.acknowledged) {
-            console.log(`User ${FormData.name} added successfully`);
+            // console.log(`User ${FormData.name} added successfully`);
             return `User ${FormData.name} added successfully`;
         } else {
             console.log("Error While adding user");
@@ -76,8 +76,8 @@ const addTodo = async (FormData) => {
         const result= await collection.insertOne(todoToAdd);
 
         if (result.acknowledged) {
-            console.log("Todo added successfully");
-            return `<h1>Todo with id ${result.insertedId} added successfully</h1>`;
+            console.log(`Todo with id ${result.insertedId} added successfully.`);
+            return result.insertedId;
         } else {
             console.log("Todo not added");
             return false;
@@ -95,7 +95,7 @@ const getTodos = async () => {
         const db = client.db(dbName);
         const collection = db.collection('todos');
         const todos = await collection.find({}).toArray();
-        console.log(todos);
+        // console.log(todos);
         return todos;
     } catch (err) {
         console.log("Error while connecting to the database :::", err);

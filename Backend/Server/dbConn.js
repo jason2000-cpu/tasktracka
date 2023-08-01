@@ -15,7 +15,8 @@ const dbConn = async () => {
         const db = client.db(dbName);
         const collection = db.collection(collectionName);
         const todo =  await collection.findOne({body : "Visit Friend"})
-        console.log(todo);
+        // console.log(todo);
+        return todo
     }
     catch (err) {
         console.log("Error while connecting to the database :::", err);

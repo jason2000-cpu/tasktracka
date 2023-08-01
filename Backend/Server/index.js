@@ -23,28 +23,28 @@ app.get('/getUser', async (req, res) => {
 });
 
 app.get('/getTodos', async (req, res) => {
-    res.send( await getTodos());
+    res.json( {message: 'Success', body: await getTodos()});
 });
 
-app.get('/addUser', async (req, res) => {
+app.post('/addUser', async (req, res) => {
     res.send( await addUser({name: "John Jack",email:'johnjack@gmail.com', password: "test"}));
 });
 
-app.get('/addTodo', async (req, res) => {
-    res.send( await addTodo({
-        timestamp: new Date(),
-        body: "Order Groceries",
-        status: "Not Complete",
-    }));
+app.post('/addTodo', async (req, res) => {     
+    res.json({message: `Success: ${req.body.id}`, body: await addTodo(req.body)});
+    console.log(req.body);
+    console.log("Todo added successfully")
 });
 
-app.get('/editTodo', async (req, res) => {
+app.post('/editTodo', async (req, res) => {
     res.send( await editTodo({
         timestamp: new Date().getTime(),
         body: "Visit Friend",
         status: "Not Complete",
     }));
 });
+
+
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 })

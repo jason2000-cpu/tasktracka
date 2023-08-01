@@ -4,69 +4,96 @@ import React, { useEffect, useState } from 'react'
 import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 
 import './Home.css'
+// import { Form } from 'react-router-dom';
 
 
 function Home() {
-
+    // const formData = new FormData();
 
     // let [todos, setTodo] = useState();
     let [item, setItem] = useState([]);
-    // let [formData, setFormData] = useState([])
-    const url = 'http://localhost:5000'
+    let [formData, setFormData] = useState({
+      id: "",
+      body: "",
+      timestamp: "",
+      status: "Not Complete"
+    });
+    // const formData = new FormData();
+    const url = 'http://localhost:5000';
 
  useEffect( () => {
-  async function fetchData() {
+  async function fetchTasks() {
     const response = await fetch(`${url}/getTodos`)
     try {
       const response =  await fetch(`${url}/getTodos`);
       const json = await response.json();
       console.log(json);
-      setItem(json);
+      console.log(json.body);
+      setItem(json.body);
     } catch (err) {
       alert("An Error occured while fetching todos ::::", response)
     }
   }
-  fetchData()
+  fetchTasks()
  }, [url])
 
 
+// create timestamp
+ const createTimeStamp = () => {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day  = date.getDate();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let second = date.getSeconds();
+  let timeStamp = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+  return timeStamp;
+}
 
-    const createTimeStamp = () => {
-        let date = new Date();
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day  = date.getDate();
-        let hour = date.getHours();
-        let minute = date.getMinutes();
-        let second = date.getSeconds();
-        let timeStamp = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
-        return timeStamp;
-    }
-  const createRandomId = () => {
-    let id = Math.random().toString(36).substr(2, 4);
-    return id;
-  };
-  const createTodo = () => {
-    let todoId = document.getElementById("todoId").value;
-    let todoBody = document.getElementById("todoBody").value;
-    let todoTimestamp = document.getElementById("todoTimestamp").value;
-    let todoStatus = "Not complete";
-    let todo = {
-      id: todoId,
-      timestamp: todoTimestamp,
-      body: todoBody,
-      status: todoStatus,
-    };
-    // setFormData(todo)
-    
-    alert(`Success!! ${todo.body} is created at ${todo.timestamp}`)
-    return todo;
-  };
+// create random id
+const createRandomId = () => {
+let id = Math.random().toString(36).substr(2, 4);
+return id;
+};
 
- const fillIdAndTimestamp = () => {
-      document.getElementById("todoId").value = createRandomId();
-      document.getElementById("todoTimestamp").value = createTimeStamp();
- };
+
+// fill id and timestamp
+const fillIdAndTimestamp = () => {
+document.getElementById("todoId").value = createRandomId();
+document.getElementById("todoTimestamp").value = createTimeStamp();
+setFormData({ ...formData, id: createRandomId(), timestamp: createTimeStamp() });
+
+};
+
+// handle input change event
+
+const handleChange = (event) => {
+  const { name, value } = event.target;
+  setFormData({ ...formData, [name]: value });
+  // console.log(name, value)
+  // formData.set(name, value);
+  // console.log(formData)
+};
+
+//handle form submit 
+
+const handleSubmit =  async (event) => {
+  event.preventDefault();
+  console.log(formData);
+  const requestOptions ={
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  }
+
+  const response =  await fetch(`${url}/addTodo`, requestOptions);
+  const json = await response.json();
+  console.log(json.body);
+  alert(json.body);
+  return json.body;
+};
+
   return (
     <div className='body'>
         <div className='main row'>
@@ -99,22 +126,22 @@ function Home() {
                         <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn" onClick={fillIdAndTimestamp}>Create new Todo</button>
                     </div>
                 </div>
-                <div className='form'>
+                <form className='form' onSubmit={handleSubmit}>
                     <div class="mb-3">
                         <label for="todoId" class="form-label">Todo Id</label>
-                        <input type="text" class="form-control" id="todoId" placeholder="" />
+                        <input type="text" class="form-control" id="todoId" placeholder="" name='todoId' required  />
                     </div>
                     <div class="mb-3">
                         <label for="todoBody" class="form-label">Todo Body :</label>
-                        <textarea class="form-control" id="todoBody" rows="3"></textarea>
+                        <textarea class="form-control" id="todoBody" rows="3" required name='body' onChange={handleChange}></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="todoTimestamp" class="form-label">Todo Timestamp</label>
-                        <input type="email" class="form-control" id="todoTimestamp" placeholder=" " />
+                        <input type="text" class="form-control" id="todoTimestamp" placeholder=" " name='timeStamp' required/>
                     </div>
-                    <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn" onClick={createTodo}>Create Todo</button>
+                    <button type="submit"  style={{backgroundColor:'#367864', width:'100%'}} class="btn">Create Todo</button>
 
-                </div>
+                </form>
             </div>
         </div>
     </div>
