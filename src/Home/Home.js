@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // icons
 import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 
 import './Home.css'
-// import { Form } from 'react-router-dom';
+// import { Form } from 'react-router-dom'
+
 
 
 function Home() {
-    // const formData = new FormData();
 
-    // let [todos, setTodo] = useState();
     let [item, setItem] = useState([]);
     let [formData, setFormData] = useState({
       id: "",
@@ -18,25 +17,24 @@ function Home() {
       timestamp: "",
       status: "Not Complete"
     });
-    // const formData = new FormData();
     const url = 'http://localhost:5000';
 
- useEffect( () => {
-  async function fetchTasks() {
-    const response = await fetch(`${url}/getTodos`)
-    try {
-      const response =  await fetch(`${url}/getTodos`);
-      const json = await response.json();
-      console.log(json);
-      console.log(json.body);
-      setItem(json.body);
-    } catch (err) {
-      alert("An Error occured while fetching todos ::::", response)
-    }
-  }
-  fetchTasks()
- }, [url])
+    useEffect( () => {
+      async function fetchTasks() {
+        try {
+          const response =  await fetch(`${url}/getTodos`);
+          const json = await response.json();
+          // console.log(json);
+          console.log(json);
+          setItem(json);
+        } catch (err) {
+          alert("An Error occured while fetching todos")
+        }
+      }
+      fetchTasks()
+    }, [url])
 
+// console.log(item)
 
 // create timestamp
  const createTimeStamp = () => {
@@ -90,7 +88,6 @@ const handleSubmit =  async (event) => {
   const response =  await fetch(`${url}/addTodo`, requestOptions);
   const json = await response.json();
   console.log(json.body);
-  alert(json.body);
   return json.body;
 };
 

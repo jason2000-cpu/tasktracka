@@ -18,22 +18,25 @@ app.get('/', (req, res) => {
     res.send("<h1>Welcome! This is the server to tasktracka app</h1>");
 });
 
-app.get('/getUser', async (req, res) => {
-    res.send( await getUser("John Smith"));
+app.post('/getUser', async (req, res) => {
+    console.log("Request body", req.body);
+    res.send( await getUser(req.body));
+    // console.log(await getUser(req.body).then((resp) => {return resp.body}));
 });
 
 app.get('/getTodos', async (req, res) => {
-    res.json( {message: 'Success', body: await getTodos()});
+    res.json(await getTodos());
 });
 
 app.post('/addUser', async (req, res) => {
-    res.send( await addUser({name: "John Jack",email:'johnjack@gmail.com', password: "test"}));
+    console.log("Request body", req.body);
+    res.send( await addUser(req.body));
 });
 
 app.post('/addTodo', async (req, res) => {     
-    res.json({message: `Success: ${req.body.id}`, body: await addTodo(req.body)});
+    res.json( await addTodo(req.body));
     console.log(req.body);
-    console.log("Todo added successfully")
+    console.log(await addTodo(req.body).then((resp) => {return resp.body}));
 });
 
 app.post('/editTodo', async (req, res) => {

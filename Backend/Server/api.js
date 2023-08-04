@@ -15,13 +15,15 @@ const getUser = async (formData) => {
         await client.connect();
         const db = client.db(dbName);
         const collection = db.collection(collectionName);
-        const user = await collection.findOne({name: formData.name, password: formData.password})
+        const user = await collection.findOne({email: formData.email, password: formData.password})
         if (user) {
             // console.log(user);
-            return user;
+            const res = {status: "Success", body: user}
+            return res;
         }else {
             console.log("User not found");
-            return null;
+            const res = {status: "User not found", body: formData}
+            return res
         }
     }
     catch (err) {
@@ -38,6 +40,11 @@ const addUser = async (FormData) => {
         const db = client.db(dbName);
         const collection = db.collection('users');
 
+        const searchifUserExists = await collection.findOne({email: FormData.email});
+        if (searchifUserExists) {
+            return {status: "Error", body: `A user with this email already exists`}
+        }
+
         const document = {
             name: FormData.name,
             email: FormData.email,
@@ -47,10 +54,12 @@ const addUser = async (FormData) => {
         const result = await collection.insertOne(document);
         if (result.acknowledged) {
             // console.log(`User ${FormData.name} added successfully`);
-            return `User ${FormData.name} added successfully`;
+            const resp = {status: "Success", body: `user ${FormData.name} added successfully`}
+            return resp;
         } else {
             console.log("Error While adding user");
-            return false;
+            const resp = {status: "Error", body: `Error While adding user`}
+            return resp;
         }
 
         
@@ -77,10 +86,12 @@ const addTodo = async (FormData) => {
 
         if (result.acknowledged) {
             console.log(`Todo with id ${result.insertedId} added successfully.`);
-            return result.insertedId;
+            const resp = {status: "Success", body: `Todo with id ${result.insertedId} added successfully.`}
+            return resp;
         } else {
             console.log("Todo not added");
-            return false;
+            const resp = {status: "Error", body: `Todo not added`}
+            return resp;
         }
     } catch (error) {
         console.log("Error while connecting to the database :::", error);
@@ -120,10 +131,12 @@ const editTodo = async (FormData) => {
 
         if (result.insertedCount === 1) {
             console.log("Todo added successfully");
-            return true;
+            const resp = {status: "Success", body: `Todo with id ${result.insertedId} edited successfully.`}
+            return resp;
         } else {
             console.log("Todo not added");
-            return false;
+            const resp = {status: "Error", body: `And error occured while editing the todo`}
+            return resp;
         }
     } catch (error) {
         console.log("Error while connecting to the database :::", error);
