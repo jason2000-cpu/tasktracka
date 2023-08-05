@@ -6,33 +6,39 @@ import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 import './Home.css'
 // import { Form } from 'react-router-dom'
 
+// const { ObjectId } = require('mongodb')
 
-
-function Home() {
+function Home({ userId }) {
 
     let [item, setItem] = useState([]);
     let [formData, setFormData] = useState({
       id: "",
       body: "",
       timestamp: "",
-      status: "Not Complete"
+      status: "Not Complete",
+      userId:  Object(localStorage.getItem('token'))
     });
     const url = 'http://localhost:5000';
 
     useEffect( () => {
       async function fetchTasks() {
         try {
-          const response =  await fetch(`${url}/getTodos`);
+          const response =  await fetch(`${url}/getTodos?userId=${userId}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+          });
           const json = await response.json();
           // console.log(json);
-          console.log(json);
-          setItem(json);
+          if (json.status === "Success") {
+            console.log("This are the todos::::",json.body);
+            setItem(json.body);
+          }
         } catch (err) {
           alert("An Error occured while fetching todos")
         }
       }
       fetchTasks()
-    }, [url])
+    }, [url, userId])
 
 // console.log(item)
 

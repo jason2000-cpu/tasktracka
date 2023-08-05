@@ -5,6 +5,11 @@ import logo from '../image/logo.svg'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+  const logout = () =>{
+    localStorage.clear();
+    sessionStorage.clear();
+  }
+
   return (
     <div className='bodi'>
         <div className='logo'>
@@ -16,7 +21,7 @@ function Navbar() {
             <ul>
                 <Link to={'/home'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Home</li></Link>
                 <Link to={'/'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Profile</li></Link>
-                <Link to={'/login'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}}><li>Logout</li></Link>
+                <Link to={'/login'} style={{textDecoration:'none', fontWeight:'bold', color:'rgba(54, 120, 100, 1)'}} onClick={logout}><li>Logout</li></Link>
             </ul>
         </div>
     </div>

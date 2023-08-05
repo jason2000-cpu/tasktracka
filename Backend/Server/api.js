@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 const uri = "mongodb://127.0.0.1:27017";
 
@@ -18,11 +18,11 @@ const getUser = async (formData) => {
         const user = await collection.findOne({email: formData.email, password: formData.password})
         if (user) {
             // console.log(user);
-            const res = {status: "Success", body: user}
+            const res = {status: "Success", body: user._id}
             return res;
         }else {
             console.log("User not found");
-            const res = {status: "User not found", body: formData}
+            const res = {status: "User not found", body: user}
             return res
         }
     }
@@ -54,7 +54,7 @@ const addUser = async (FormData) => {
         const result = await collection.insertOne(document);
         if (result.acknowledged) {
             // console.log(`User ${FormData.name} added successfully`);
-            const resp = {status: "Success", body: `user ${FormData.name} added successfully`}
+            const resp = {status: "Success", body: result.insertedId}
             return resp;
         } else {
             console.log("Error While adding user");
@@ -100,14 +100,20 @@ const addTodo = async (FormData) => {
     }
 };
 
-const getTodos = async () => {
+const getTodos = async (id) => {
     try {
         await client.connect();
         const db = client.db(dbName);
         const collection = db.collection('todos');
-        const todos = await collection.find({}).toArray();
-        // console.log(todos);
-        return todos;
+        // const todos = await collection.find(id:_ObjectId(id)).toArray();
+        const todos = await collection.find({userId: new ObjectId(id)}).toArray();
+        console.log(todos);
+        console.log(id)
+        if (todos.length > 0) {
+            const resp = {status: "Success", body: todos}
+            return resp
+        }
+        return {status: "Error", body: {}};
     } catch (err) {
         console.log("Error while connecting to the database :::", err);
         return err

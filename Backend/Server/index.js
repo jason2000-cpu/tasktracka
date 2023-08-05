@@ -19,13 +19,16 @@ app.get('/', (req, res) => {
 });
 
 app.post('/getUser', async (req, res) => {
-    console.log("Request body", req.body);
+    // console.log("Request body", req.body);
     res.send( await getUser(req.body));
     // console.log(await getUser(req.body).then((resp) => {return resp.body}));
 });
 
-app.get('/getTodos', async (req, res) => {
-    res.json(await getTodos());
+app.get('/getTodos/', async (req, res) => {
+    const id = req.query.userId;
+    console.log("Request id", id);
+    res.json(await getTodos(id));
+
 });
 
 app.post('/addUser', async (req, res) => {

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function Login(props) {
+function Login({ getUserId }) {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({});
 
@@ -30,12 +30,13 @@ function Login(props) {
             });
             
             const json = await res.json();
-            console.log(json);
+            // console.log(json);
 
             if (json.status === 'Success') {
-                // localStorage.setItem('token', json.body.);
+                localStorage.setItem('token', json.body);
                 // props.history.push('/home');
-                 navigate('/home');
+                 navigate(`/home/`);
+                 getUserId(json.body);
                 
             } else {
                 alert('Invalid Credentials');

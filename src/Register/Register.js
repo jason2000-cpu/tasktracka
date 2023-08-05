@@ -7,7 +7,7 @@ import '../login/login.css'
 import Vector from '../image/Vector.png'
 import googleIcon from '../image/googleIcon.svg'
 
-function Register(props) {
+function Register({ getUserId }) {
     const navigate= useNavigate();
 
     const [formData, setFormData] = useState({});
@@ -31,8 +31,9 @@ function Register(props) {
             const json = await res.json();
             console.log(json.status);
             if (json.status === "Success"){
-                // localStorage.setItem('token', json.data.token);
+                // localStorage.setItem('token', json.body.id);
                 // props.history.push('/home');
+                getUserId(json.body.id);
                 alert('Registration Successful');
                 navigate('/login');           
              }
