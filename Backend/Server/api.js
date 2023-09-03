@@ -3,7 +3,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const uri = "mongodb://127.0.0.1:27017";
 
 
-const dbName = 'TaskTracka';
+const dbName = 'tasktracka';
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -80,6 +80,7 @@ const addTodo = async (FormData) => {
             timestamp: FormData.timestamp,
             body: FormData.body,
             status: FormData.status,
+            userId: FormData.userId
         }
 
         const result= await collection.insertOne(todoToAdd);
@@ -109,7 +110,7 @@ const getTodos = async (id) => {
         const todos = await collection.find({userId: new ObjectId(id)}).toArray();
         console.log(todos);
         console.log(id)
-        if (todos.length > 0) {
+        if (todos) {
             const resp = {status: "Success", body: todos}
             return resp
         }

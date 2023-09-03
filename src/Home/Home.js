@@ -6,7 +6,7 @@ import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 import './Home.css'
 // import { Form } from 'react-router-dom'
 
-// const { ObjectId } = require('mongodb')
+
 
 function Home({ userId }) {
 
@@ -16,7 +16,7 @@ function Home({ userId }) {
       body: "",
       timestamp: "",
       status: "Not Complete",
-      userId:  Object(localStorage.getItem('token'))
+      userId:  userId
     });
     const url = 'http://localhost:5000';
 
@@ -38,7 +38,7 @@ function Home({ userId }) {
         }
       }
       fetchTasks()
-    }, [url, userId])
+    }, [userId])
 
 // console.log(item)
 
@@ -103,7 +103,9 @@ const handleSubmit =  async (event) => {
             <div className='list col col-sm-6'>
                 <h2>Tasks</h2>
                 <div className='listBody'>
-                    {item.map((item, index) => (
+                    {
+                     item.length > 0 ? 
+                     item.map((item, index) => (
                         <div className='todo' key={index}>
                             <div data-id={item.id} className='todo-content-item'>
                                 <span className='todo-id'>▪️{item._id}▪️</span>
@@ -117,7 +119,9 @@ const handleSubmit =  async (event) => {
                                     </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                      : <h1>EMPTY TASKS !!!</h1>
+                    }
                 </div>
             </div>
             <div className='todoFact col col-sm-6'>

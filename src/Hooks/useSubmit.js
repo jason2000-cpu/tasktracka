@@ -5,8 +5,8 @@ const useSubmit = (props) => {
     const [fomData, setFormData] = useState({});
     const [response, setResponse] = useState({});
     useEffect(() => {
-        setFormData(props);
-    }, [props]);
+        setFormData({...fomData, props});
+    }, [props, fomData]);
 
     async function login(){
         const response = await fetch(`${url}/getUser`, {

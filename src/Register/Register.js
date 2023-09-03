@@ -29,11 +29,11 @@ function Register({ getUserId }) {
             });
             
             const json = await res.json();
-            console.log(json.status);
+            console.log(json);
             if (json.status === "Success"){
-                // localStorage.setItem('token', json.body.id);
+                localStorage.setItem('token', json.body.id);
                 // props.history.push('/home');
-                getUserId(json.body.id);
+                // getUserId(json.body.id);
                 alert('Registration Successful');
                 navigate('/login');           
              }
