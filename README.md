@@ -74,10 +74,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # Database
 - This application uses mongodb as its database
 
-### Deploy an Alas cluster
+### Deploy an Altas cluster
 
 In the terminal tab, use the following command to create a MongoDB Atlas cluster in your Atlas project, MDB_EDU. Then follow the instructions in the terminal.
 
 ```
 atlas setup --clusterName myAtlasClusterEDU --provider AWS --currentIp --skipSampleData --username myAtlasDBUser --password myatlas-001 | tee atlas_cluster_details.txt
+```
+
+
+
+### Command to start the mongod server
+
+```
+ mongod --config ./mongod/mongod.conf
 ```

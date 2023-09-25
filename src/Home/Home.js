@@ -9,7 +9,6 @@ import './Home.css'
 
 
 function Home({ userId }) {
-
     let [item, setItem] = useState([]);
     let [formData, setFormData] = useState({
       id: "",
@@ -103,7 +102,9 @@ const handleSubmit =  async (event) => {
             <div className='list col col-sm-6'>
                 <h2>Tasks :::u{userId}</h2>
                 <div className='listBody'>
-                    {item.map((item, index) => (
+                    {
+                     item.length > 0 ? 
+                     item.map((item, index) => (
                         <div className='todo' key={index}>
                             <div data-id={item.id} className='todo-content-item'>
                                 <span className='todo-id'>▪️{item._id}▪️</span>
@@ -117,7 +118,14 @@ const handleSubmit =  async (event) => {
                                     </div>
                             </div>
                         </div>
-                    ))}
+                    )) :
+                        <div className="empty-todo">
+                            <img src='../image/undraw_empty_xct9.png' alt='empty' style={{width: "50%"}} />
+                            <br />
+                            <span style={{fontFamily: 'Fira Sans', fontSize: 20, fontWeight: 'bold'}}>There are no todos yet....</span>
+                        </div>
+                       
+                    }
                 </div>
             </div>
             <div className='todoFact col col-sm-6'>

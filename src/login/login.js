@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function Login({ getUserId }) {
+function Login({ setUserId }) {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({});
 
@@ -36,6 +36,7 @@ function Login({ getUserId }) {
                 localStorage.setItem('token', json.body);
                 // props.history.push('/home');
                  navigate(`/home/`);
+                //  setUserId(json.body)
                 //  getUserId(json.body);
                 
             } else {

@@ -110,7 +110,7 @@ const getTodos = async (id) => {
         const todos = await collection.find({userId: new ObjectId(id)}).toArray();
         console.log(todos);
         console.log(id)
-        if (todos.length > 0) {
+        if (todos) {
             const resp = {status: "Success", body: todos}
             return resp
         }
