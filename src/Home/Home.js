@@ -100,7 +100,7 @@ const handleSubmit =  async (event) => {
     <div className='body'>
         <div className='main row'>
             <div className='list col col-sm-6'>
-                <h2>Tasks :::u{userId}</h2>
+                <h2>Tasks</h2>
                 <div className='listBody'>
                     {
                      item.length > 0 ? 

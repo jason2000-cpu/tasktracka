@@ -67,7 +67,7 @@ function Register({ getUserId }) {
             <h1>Tracka</h1>
         </div>
         <div className='login'>
-            <h2>Sign In</h2>
+            <h2>Sign Up</h2>
             <div className='google-login'>
                 <div className='gogle-logo'>
                     <img src={googleIcon} alt='google-icon' />
