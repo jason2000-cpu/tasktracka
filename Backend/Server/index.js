@@ -37,7 +37,7 @@ app.post('/addUser', async (req, res) => {
 });
 
 app.post('/addTodo', async (req, res) => {     
-    res.json( await addTodo(req.body));
+    res.json(await addTodo(req.body));
     console.log(req.body);
     console.log(await addTodo(req.body).then((resp) => {return resp.body}));
 });

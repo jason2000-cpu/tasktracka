@@ -1,5 +1,5 @@
 // import {Route, BrowserRouter} from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import './App.css';
 import Login from './login/login.js'
@@ -10,17 +10,21 @@ import Navbar from './Navbar/Navbar';
 function App() {
   // const userId = localStorage.getItem('token');
   const [userId, setUserId] = useState('');
-  const getUserId = (id) => {
-    setUserId(id);
+
+ useEffect(()=>{
+    const userId = localStorage.getItem('token');
+    if(userId){
+      setUserId(userId);
   }
+ }, [userId]);
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Register getUserId={getUserId} />
+      element: <Register  />
     },
     {
       path: '/login',
-      element: <Login getUserId={getUserId} />
+      element: <Login  />
     },
     {
       path: `/home/`,
