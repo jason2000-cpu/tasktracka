@@ -96,12 +96,12 @@ atlas setup --clusterName myAtlasClusterEDU --provider AWS --currentIp --skipSam
 
 ### Login page
 
-![Login Screen](./image/loginScreen.PNG)
+![Login Screen](./src/image/loginScreen.PNG)
 
 ### Register page
 
-![Register Screen](./image/RegisterScreen.PNG)
+![Register Screen](./src/image/RegisterScreen.PNG)
 
 ### Home page
 
-![Home Screen](./image/homeScreen.PNG)
+![Home Screen](./src/image/homeScreen.PNG)
