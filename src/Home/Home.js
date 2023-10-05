@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
+import Task from './Task';
+import Empty from './Empty'
 // icons
-import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
+// import { FaEdit, FaCheck, FaTrashAlt } from "react-icons/fa";
 
 import './Home.css'
 // import { Form } from 'react-router-dom'
@@ -9,7 +11,7 @@ import './Home.css'
 
 
 function Home({ userId }) {
-    let [item, setItem] = useState([]);
+    let [tasks, setTasks] = useState([]);
     let [formData, setFormData] = useState({
       id: "",
       body: "",
@@ -30,14 +32,14 @@ function Home({ userId }) {
           // console.log(json);
           if (json.status === "Success") {
             console.log("This are the todos::::",json.body);
-            setItem(json.body);
+            setTasks(json.body);
           }
         } catch (err) {
           alert("An Error occured while fetching todos")
         }
       }
       fetchTasks()
-    }, [userId])
+    });
 
 // console.log(item)
 
@@ -102,30 +104,8 @@ const handleSubmit =  async (event) => {
             <div className='list col col-sm-6'>
                 <h2>Tasks</h2>
                 <div className='listBody'>
-                    {
-                     item.length > 0 ? 
-                     item.map((item, index) => (
-                        <div className='todo' key={index}>
-                            <div data-id={item.id} className='todo-content-item'>
-                                <span className='todo-id'>▪️{item._id}▪️</span>
-                                {item.status === "Complete" ? <span style={{textDecoration: 'line-through'}} className='todo-text'>{item.body}</span> : <span className='todo-text'>{item.body}</span>}
-                                <span className='todo-date'>Created at : {item.timestamp}</span>
-                                <span className='todo-status incomplete'>▪️ {item.status} ▪️</span>
-                                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}} className='actions-window'>
-                                    <FaEdit size={20} />
-                                    <FaTrashAlt size={20} />
-                                    {item.status === "Complete" ? "" : <FaCheck size={20}  /> }
-                                    </div>
-                            </div>
-                        </div>
-                    )) :
-                        <div className="empty-todo">
-                            <img src='../image/undraw_empty_xct9.png' alt='empty' style={{width: "50%"}} />
-                            <br />
-                            <span style={{fontFamily: 'Fira Sans', fontSize: 20, fontWeight: 'bold'}}>There are no todos yet....</span>
-                        </div>
-                       
-                    }
+                    <p>User ID : { userId ? userId : userId}</p>
+                    { tasks.length > 0 ? <Task tasks={tasks} /> :  <Empty /> }
                 </div>
             </div>
             <div className='todoFact col col-sm-6'>
