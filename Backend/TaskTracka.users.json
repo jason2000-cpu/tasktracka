@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "64c12156f8c27c6d22600820"
+  },
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+  "password": "12345"
+},
+{
+  "_id": {
+    "$oid": "64c17b08d3e44a9e2814685b"
+  },
+  "name": "John Smith",
+  "email": "johnsmith@gmail.com",
+  "password": "12345"
+},
+{
+  "_id": {
+    "$oid": "64c17b2dd3e44a9e2814685c"
+  },
+  "name": "Jane Smith",
+  "email": "janesmith@gmail.com",
+  "password": "12345"
+},
+{
+  "_id": {
+    "$oid": "64c17b49d3e44a9e2814685d"
+  },
+  "name": "Jane Doe",
+  "email": "janedoe@gmail.com",
+  "password": "12345"
+},
+{
+  "_id": {
+    "$oid": "64c4c77620d019c6ce92f881"
+  },
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "1234566758"
+},
+{
+  "_id": {
+    "$oid": "64c515e629775d6d023df45b"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64c515e829775d6d023df45c"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64c51611a360e7ba7cc26233"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64c516436368cf9fb02708b5"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64c516b1f1e845c4bdd735d3"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64c516d534a1fb8e0b665e78"
+  },
+  "name": "John Jack",
+  "email": "johnjack@gmail.com",
+  "password": "test"
+},
+{
+  "_id": {
+    "$oid": "64ccfa39193ceba3307c6b79"
+  },
+  "name": "jackson",
+  "email": "jacksonmuturi2000@gmail.com",
+  "password": "12345"
+},
+{
+  "_id": {
+    "$oid": "64e2f8cf29964ec389354773"
+  },
+  "name": "james",
+  "email": "james@gmail.com",
+  "password": "12345"
+}]

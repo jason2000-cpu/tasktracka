@@ -1,0 +1,283 @@
+{
+"users": [
+    {
+        "_id": "64c12156f8c27c6d22600820",
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "password": "12345"
+    },
+    {
+        "_id": "64c17b08d3e44a9e2814685b",
+        "name": "John Smith",
+        "email": "johnsmith@gmail.com",
+        "password": "12345"
+    },
+    {
+        "_id": "64c17b2dd3e44a9e2814685c",
+        "name": "Jane Smith",
+        "email": "janesmith@gmail.com",
+        "password": "12345"
+    },
+    {
+        "_id": "64c17b49d3e44a9e2814685d",
+        "name": "Jane Doe",
+        "email": "janedoe@gmail.com",
+        "password": "12345"
+    },
+    {
+        "_id": "64c4c77620d019c6ce92f881",
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "1234566758"
+    },
+    {
+        "_id": "64c515e629775d6d023df45b",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64c515e829775d6d023df45c",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64c51611a360e7ba7cc26233",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64c516436368cf9fb02708b5",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64c516b1f1e845c4bdd735d3",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64c516d534a1fb8e0b665e78",
+        "name": "John Jack",
+        "email": "johnjack@gmail.com",
+        "password": "test"
+    },
+    {
+        "_id": "64ccfa39193ceba3307c6b79",
+        "name": "jackson",
+        "email": "jacksonmuturi2000@gmail.com",
+        "password": "12345"
+    },
+    {
+        "_id": "64e2f8cf29964ec389354773",
+        "name": "james",
+        "email": "james@gmail.com",
+        "password": "12345"
+    }
+],
+
+"todos": [
+    {
+        "_id": "64c17d17d3e44a9e2814685e",
+        "timestamp":"2022-06-27T20:36:42.000Z",
+        "body": "Kenya One",
+        "status": "Not Complete",
+        "userId": "64c12156f8c27c6d22600820"
+
+    },
+    {
+        "_id": "64c17d69d3e44a9e2814685f",
+        "timestamp":"2022-06-30T19:29:01.000Z",
+        "body": "Visit Friend",
+        "status": "Not Complete",
+        "userId": "64c17b08d3e44a9e2814685b"
+
+    },
+    {
+        "_id": "64c17e01d3e44a9e28146860",
+        "timestamp":"2022-07-30T06:34:40.000Z",
+        "body": "Milk Cows",
+        "status": "Not Complete",
+        "userId": "64c17b08d3e44a9e2814685b"
+
+    },
+    {
+        "_id": "64c17e69d3e44a9e28146861",
+        "timestamp":"2022-07-01T07:01:48.000Z",
+        "body": "Do the axios assignment",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c17ef3d3e44a9e28146862",
+        "timestamp":"2022-10-27T12:46:09.000Z",
+        "body": "Learn Angular",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c17f22d3e44a9e28146863",
+        "timestamp":"2022-11-27T13:38:30.000Z",
+        "body": "Learn React",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64c17f67d3e44a9e28146864",
+        "timestamp":"2022-11-10T06:18:30.000Z",
+        "body": "Do house chores",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64c5175ee25c7bb40384ef92",
+        "timestamp":"2023-07-29T13:42:54.059Z",
+        "body": "Visit Friend",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c51795b744c1a483af066d",
+        "timestamp":"2023-07-29T13:43:49.211Z",
+        "body": "Visit Friend",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c76f2a96bbe6ae26ad6a06",
+        "timestamp":"2023-07-31T08:22:02.845Z",
+        "body": "Order Groceries",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64c8f54b6e407276b48c242c",
+        "timestamp":"2023-08-01T12:06:22.000Z",
+        "body": "Hello world the time has come frontend",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64c8f5ca6e407276b48c242d",
+        "timestamp":"2023-08-01T12:08:32.000Z",
+        "body": "just to confirm this",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c8f75a6e407276b48c242e",
+        "timestamp":"2023-08-01T12:15:09.000Z",
+        "body": "Again and again",
+        "status": "Not Complete",
+        "userId": "64c516d534a1fb8e0b665e78"
+
+    },
+    {
+        "_id": "64c905b0e6fb1766bf90ed65",
+        "timestamp":"2023-08-01T13:16:21.000Z",
+        "body": "Hello world",
+        "status": "Not Complete",
+        "userId": "64c17b2dd3e44a9e2814685c"
+
+    },
+    {
+        "_id": "64c952301bddfd58901eb08e",
+        "timestamp":"2023-08-01T18:42:47.000Z",
+        "body": "late night code",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64c952351bddfd58901eb08f",
+        "timestamp":"2023-08-01T18:42:47.000Z",
+        "body": "late night code",
+        "status": "Not Complete",
+        "userId": "64ccfa39193ceba3307c6b79"
+
+    },
+    {
+        "_id": "64ccd4af0f327b650cf9af03",
+        "timestamp":"2023-08-04T10:36:09.000Z",
+        "body": "Friday after party",
+        "status": "Not Complete"
+    },
+    {
+        "_id": "64cd4a977a459c3966c8f9bc",
+        "timestamp":"2023-08-04T18:59:18.000Z",
+        "body": "john doe got one",
+        "status": "Not Complete"
+    },
+    {
+        "_id": "64cd4a977a459c3966c8f9bd",
+        "timestamp":"2023-08-04T18:59:18.000Z",
+        "body": "john doe got one",
+        "status": "Not Complete"
+    },
+    {
+        "_id": "64ce1e2d7a13062f0aaed57b",
+        "timestamp":"2023-08-05T10:02:03.000Z",
+        "body": "Jane Smith:::: Hell my people",
+        "status": "Not Complete",
+        "userId": "757365722069642068657265"
+
+    },
+    {
+        "_id": "64ce1ee3c0514d0f0013fb83",
+        "timestamp": "2023-8-5 13:5:11",
+        "body": "jane smith::::: hello my world",
+        "status": "Not Complete",
+        "userId": "757365722069642068657265"
+
+    },
+    {
+        "_id": "64ce1f3acb991367dfdf1c48",
+        "timestamp": "2023-8-5 13:6:40",
+        "body": "Jane smith:::: hello my world",
+        "status": "Not Complete",
+        "userId": "64c17b2dd3e44a9e2814685c"
+
+    },
+    {
+        "_id": "64ce21d0b9e54a8e90e8537f",
+        "timestamp": "2023-8-5 13:17:37",
+        "body": "jane Doe:::: hello my world",
+        "status": "Not Complete",
+        "userId": "64c17b49d3e44a9e2814685d"
+    },
+    {
+        "_id": "64ce21d0b9e54a8e90e85380",
+        "timestamp": "2023-8-5 13:17:37",
+        "body": "jane Doe:::: hello my world",
+        "status": "Not Complete",
+        "userId": "64c17b49d3e44a9e2814685d"
+    },
+    {
+        "_id": "64e2f8f329964ec389354774",
+        "timestamp": "2023-8-21 8:40:57",
+        "body": "james Todos",
+        "status": "Not Complete",
+        "userId": "64c12156f8c27c6d22600820"
+    },
+    {
+        "_id": "651fb29c2cbf2a39c8df0d7f",
+        "timestamp": "2023-10-6 10:8:56",
+        "body": "Todo 2: John Doe",
+        "status": "Not Complete",
+        "userId": "64c12156f8c27c6d22600820"
+    }
+]
+}
