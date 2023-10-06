@@ -89,3 +89,19 @@ atlas setup --clusterName myAtlasClusterEDU --provider AWS --currentIp --skipSam
 ```
  mongod --config ./mongod/mongod.conf
 ```
+
+
+
+## Screen captures
+
+### Login page
+
+![Login Screen](./src/image/loginScreen.PNG)
+
+### Register page
+
+![Register Screen](./src/image/RegisterScreen.PNG)
+
+### Home page
+
+![Home Screen](./src/image/homeScreen.PNG)

@@ -36,7 +36,7 @@ function Login({ setUserId }) {
                 localStorage.setItem('token', json.body);
                 // props.history.push('/home');
                  navigate(`/home/`);
-                 setUserId(json.body)
+                //  setUserId(json.body)
                 //  getUserId(json.body);
                 
             } else {
